@@ -1,0 +1,77 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css?family=Jost:300,400,500,600,700,900&display=swap");
+
+::-webkit-scrollbar {
+  width: 7px;
+  position: relative;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 3px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/*---------------------------
+       SPINNER
+---------------------------*/
+.loading {
+  width: 125px;
+  height: 125px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10px solid #333333;
+  position: relative;
+  animation: a1 2s linear infinite;
+}
+.loading::before,
+.loading::after {
+  content: "";
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.loading::before {
+  border-top: 10px solid #fff;
+  transform: rotate(120deg);
+}
+.loading::after {
+  border-top: 10px solid #4299e1;
+  transform: rotate(240deg);
+}
+.loading span {
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  color: black;
+  text-align: center;
+  line-height: 125px;
+  font-size: 16px;
+  font-weight: 500;
+  animation: a2 2s linear infinite;
+}
+@keyframes a1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes a2 {
+  to {
+    transform: rotate(-360deg);
+  }
+}
